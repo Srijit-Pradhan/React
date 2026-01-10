@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 300px;
+  height: 200px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.card button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.card button:hover {
+  background-color: darkgrey;
+}
+.card button:active {
+  transform: scale(0.98);
+}
+.popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* popup box */
+.popup-box {
+  width: 300px;
+  height: 200px;
+  background: white;
+  color: black;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Fade + Scale Popup Animation */
+.popup-anim {
+  animation: pop 0.3s ease forwards;
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+@keyframes pop {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.popup-wrapper {
+  animation: fadeBG 0.3s ease forwards;
+}
+
+@keyframes fadeBG {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
